@@ -1,0 +1,14 @@
+node_modules
+bower_components
+coverage
+ui/fonts
+deploy/local.properties
+local.json
+local.ecosystem.json
+/dist
+.DS_Store
+*.pid
+.idea/
+*.sublime-project
+*.sublime-workspace
+.tmp/
