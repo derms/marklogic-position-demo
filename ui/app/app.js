@@ -17,7 +17,10 @@
     'ui.bootstrap',
     'ui.router',
     'ui.tinymce',
-    'ngToast'
+    'ngToast',
+
+    'dashboard.linechart',
+    'position.theme'
   ]);
 
 }());
