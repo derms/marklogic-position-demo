@@ -247,6 +247,7 @@
           <range-value-positions>false</range-value-positions>
         </range-element-index>
 
+
         <!--
         Sample for:
           <name xmlns="http://marklogic.com/ns/sample">bob<name>
@@ -304,6 +305,7 @@
           <invalid-values>reject</invalid-values>
         </range-path-index>
 
+
 <!--
         <range-path-index>
           <scalar-type>string</scalar-type>
@@ -356,6 +358,7 @@
           <coordinate-system>wgs84</coordinate-system>
           <range-value-positions>false</range-value-positions>
         </geospatial-element-pair-index>
+
 
 <!--
         Sample for:
@@ -491,6 +494,7 @@
           <privilege-name>rest-writer</privilege-name>
         </privilege>
       </privileges>
+
 
     </role>
   </roles>
