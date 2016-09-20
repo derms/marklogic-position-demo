@@ -60,7 +60,7 @@
         $scope.positions = response.data;
         chart.dataProvider = mapPositionsToAmChartFormat(response.data);
         chart.titles = [{
-            "text": book
+            "text": response.data.name
         }];
 
         chart.validateData();
