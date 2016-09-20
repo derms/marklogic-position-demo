@@ -1,0 +1,33 @@
+{
+ "id" : "book-2",
+ "name": "Book Two",
+ "positions": [{
+   "date": "2015-01-01",
+   "position": 20000,
+   "projected": 20000
+ },
+ {
+   "date": "2015-02-01",
+   "position": 22000,
+   "projected": 30000
+ },
+ {
+   "date": "2015-03-01",
+   "position": 32000,
+   "projected": 42000
+ },
+ {
+   "date": "2015-04-01",
+   "position": 5000,
+   "projected": 10000
+ },
+ {
+   "date": "2015-05-01",
+   "position": 0,
+   "projected": 0
+ }],
+ "validStart": "2015-05-01T00:00:00Z",
+ "validEnd": "9999-12-31T11:59:59Z",
+ "systemStart": "2015-05-01T00:00:00Z",
+ "systemEnd": "9999-12-31T11:59:59Z"
+}

@@ -1,0 +1,60 @@
+{
+ "id" : "book-2",
+ "name": "Book Two",
+ "positions": [{
+   "date": "2015-01-01",
+   "position": 20000,
+   "projected": 20000
+ },
+ {
+   "date": "2015-02-01",
+   "position": 22000,
+   "projected": 30000
+ },
+ {
+   "date": "2015-03-01",
+   "position": 32000,
+   "projected": 42000
+ },
+ {
+   "date": "2015-04-01",
+   "position": 5000,
+   "projected": 10000
+ },
+ {
+   "date": "2015-05-01",
+   "projected": 20000
+ },
+ {
+   "date": "2015-06-01",
+   "projected": 25000
+ },
+ {
+   "date": "2015-07-01",
+   "projected": 40000
+ },
+ {
+   "date": "2015-08-01",
+   "projected": 45000
+ },
+ {
+   "date": "2015-09-01",
+   "projected": 55000
+ },
+ {
+   "date": "2015-10-01",
+   "projected": 60000
+ },
+ {
+   "date": "2015-11-01",
+   "projected": 65000
+ },
+ {
+   "date": "2015-12-01",
+   "projected": 70000
+ }],
+ "validStart": "2015-04-01T00:00:00Z",
+ "validEnd": "9999-12-31T11:59:59Z",
+ "systemStart": "2015-04-01T00:00:00Z",
+ "systemEnd": "9999-12-31T11:59:00Z"
+}
