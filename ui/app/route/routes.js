@@ -64,7 +64,7 @@
         controllerAs: 'ctrl',
         navLabel: {
           text: 'Search',
-          area: 'dashboard',
+          area: 'no-dashboard',
           navClass: 'fa-search'
         }
       })
@@ -75,7 +75,7 @@
         controllerAs: 'ctrl',
         navLabel: {
           text: 'Create',
-          area: 'dashboard',
+          area: 'no-dashboard',
           navClass: 'fa-wpforms',
           edit: true
         },
