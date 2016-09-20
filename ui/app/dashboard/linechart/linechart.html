@@ -1,1 +1,20 @@
+
+<select ng-model="selectedBook" ng-options="book for book in books" ng-change="updateSelectedBook()">
+  <option value="">--select book--</option>
+</select>
+
+<div class="slider-box">
+  <h5>Using custom values array</h5>
+  <ion-slider type="single"
+              grid="true"
+              from="5"
+              step="1000"
+              values="['January', 'February', 'March',
+                      'April', 'May', 'June',
+                      'July', 'August', 'September',
+                      'October', 'November', 'December']"
+              disable="false">
+  </ion-slider>
+</div>
+
 <div id="amchart" style="width: 800px; height: 600px;"></div>
