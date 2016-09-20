@@ -13,7 +13,6 @@ function get(context, params) {
 
   var output = {
     "id": book,
-    "book": book,
     "positions": []
   };
 
@@ -21,7 +20,7 @@ function get(context, params) {
   if (resultsArray.length>0) {
     //take first result
     var result = resultsArray[0];
-    output.root = result.root;
+    output.name = result.root.name;    
     output.positions = result.root.positions;
   }
 
