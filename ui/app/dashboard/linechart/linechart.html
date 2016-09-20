@@ -1,20 +1,99 @@
 
-<select ng-model="selectedBook" ng-options="book for book in books" ng-change="updateSelectedBook()">
-  <option value="">--select book--</option>
-</select>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-1">
 
-<div class="slider-box">
-  <h5>Using custom values array</h5>
-  <ion-slider type="single"
-              grid="true"
-              from="5"
-              step="1000"
-              values="['January', 'February', 'March',
-                      'April', 'May', 'June',
-                      'July', 'August', 'September',
-                      'October', 'November', 'December']"
-              disable="false">
-  </ion-slider>
+        <h5>{{ year}}</h5>
+    </div class="col-sm-1">
+    <div class="col-sm-1">
+      <select ng-model="selectedBook" ng-options="book for book in books" ng-change="updateSelectedBook()">
+        <option value="">--select book--</option>
+      </select>
+      </h5>
+    </div>
+  </div>
+
+  <div class="row">
+    &nbsp;
+  </div>
+  <div class="row">
+    <div class="col-sm-1">
+      <h5>As at:</h5>
+    </div>
+    <div class="col-sm-11">
+      <div class="slider-box">
+
+        <ion-slider type="single"
+                    grid="true"
+                    from="11"
+                    step="1000"
+                    values="['January', 'February', 'March',
+                            'April', 'May', 'June',
+                            'July', 'August', 'September',
+                            'October', 'November', 'December']"
+                    disable="false"
+                    on-finish="validRangeFinishCallback">
+        </ion-slider>
+
+      </div>
+  </div>
 </div>
 
-<div id="amchart" style="width: 800px; height: 600px;"></div>
+<div class="row">
+  &nbsp;
+</div>
+
+  <div class="row">
+    <div class="col-sm-1">
+      <h5>As was at:</h5>
+    </div>
+    <div class="col-sm-11">
+      <div class="slider-box">
+
+        <ion-slider type="single"
+                    grid="true"
+                    from="11"
+                    step="1000"
+                    values="['January', 'February', 'March',
+                            'April', 'May', 'June',
+                            'July', 'August', 'September',
+                            'October', 'November', 'December']"
+                    disable="false"
+                    on-finish="systemRangeFinishCallback">
+        </ion-slider>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-xlg-12" >
+      <div id="amchart" style="height:500px"></div>
+      &nbsp;
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xlg-8" >
+  <div class="vertical-scroll">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th class="table-id">Date</th>
+        <th>Actual Position</th>
+        <th>Projected Position</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="item in positions.positions">
+        <td class="table-id">{{item.date}}</td>
+        <td>{{item.position}}</td>
+        <td>{{item.projected}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+
+</div>
