@@ -10,6 +10,9 @@
 
     <!-- build:css styles/lib.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/Ionicons/css/ionicons.css" />
+    <link rel="stylesheet" href="/bower_components/ionrangeslider/css/ion.rangeSlider.css" />
+    <link rel="stylesheet" href="/bower_components/ionrangeslider/css/ion.rangeSlider.skinFlat.css" />
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="/bower_components/highlightjs/styles/default.css" />
     <link rel="stylesheet" href="/bower_components/ng-json-explorer/dist/angular-json-explorer.css" />
@@ -19,6 +22,7 @@
 
     <!-- build:css styles/app.css -->
     <!-- inject:css -->
+    <link rel="stylesheet" href="/.tmp/main.css">
     <!-- endinject -->
     <!-- endbuild -->
 
@@ -30,6 +34,7 @@
     <!-- build:js js/lib.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/ionrangeslider/js/ion.rangeSlider.js"></script>
     <script src="/bower_components/amcharts/dist/amcharts/amcharts.js"></script>
     <script src="/bower_components/amcharts/dist/amcharts/plugins/responsive/responsive.min.js"></script>
     <script src="/bower_components/amcharts/dist/amcharts/serial.js"></script>
@@ -74,6 +79,7 @@
     <!-- build:js js/app.js -->
     <!-- inject:js -->
     <script src="/ui/app/create/create.module.js"></script>
+    <script src="/ui/app/dashboard/linechart/linechart.module.js"></script>
     <script src="/ui/app/detail/detail.module.js"></script>
     <script src="/ui/app/detail/similar.module.js"></script>
     <script src="/ui/app/error/error.module.js"></script>
@@ -82,10 +88,13 @@
     <script src="/ui/app/root/root.module.js"></script>
     <script src="/ui/app/search/search.module.js"></script>
     <script src="/ui/app/search/snippet.module.js"></script>
+    <script src="/ui/app/theme/theme.module.js"></script>
     <script src="/ui/app/user/user.module.js"></script>
     <script src="/ui/app/app.js"></script>
     <script src="/ui/app/create/create.controller.js"></script>
     <script src="/ui/app/create/stringtonumber.directive.js"></script>
+    <script src="/ui/app/dashboard/linechart/linechart.controlller.js"></script>
+    <script src="/ui/app/dashboard/linechart/linechart.directive.js"></script>
     <script src="/ui/app/detail/detail.controller.js"></script>
     <script src="/ui/app/detail/similar-directive.js"></script>
     <script src="/ui/app/error/errorInterceptor.service.js"></script>
@@ -100,8 +109,13 @@
     <script src="/ui/app/route/routes.js"></script>
     <script src="/ui/app/search/search.controller.js"></script>
     <script src="/ui/app/search/snippet.directive.js"></script>
+    <script src="/ui/app/theme/baUtil.js"></script>
     <script src="/ui/app/theme/content-box.js"></script>
+    <script src="/ui/app/theme/directives/ionSlider.js"></script>
     <script src="/ui/app/theme/highcharts.js"></script>
+    <script src="/ui/app/theme/theme.config.js"></script>
+    <script src="/ui/app/theme/theme.configProvider.js"></script>
+    <script src="/ui/app/theme/theme.constants.js"></script>
     <script src="/ui/app/user/profile.controller.js"></script>
     <script src="/ui/app/user/user.directive.js"></script>
     <script src="/ui/app/user/user.service.js"></script>
