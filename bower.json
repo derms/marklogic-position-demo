@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "dependencies": {
     "jquery": "~2.1.4",
+    "Ionicons": "ionicons#~2.0.1",
+    "ionrangeslider": "~2.1.2",
     "amcharts": "~3.15.2",
     "amcharts-stock": "*",
     "angular": "~1.4.4",
