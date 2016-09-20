@@ -246,7 +246,41 @@
           <collation>http://marklogic.com/collation/codepoint</collation>
           <range-value-positions>false</range-value-positions>
         </range-element-index>
-
+        <range-element-index>
+          <scalar-type>date</scalar-type>
+          <namespace-uri/>
+          <localname>date</localname>
+          <collation>http://marklogic.com/collation/codepoint</collation>
+          <range-value-positions>false</range-value-positions>
+        </range-element-index>
+        <range-element-index>
+          <scalar-type>dateTime</scalar-type>
+          <namespace-uri/>
+          <localname>validStart</localname>
+          <collation>http://marklogic.com/collation/codepoint</collation>
+          <range-value-positions>false</range-value-positions>
+        </range-element-index>
+        <range-element-index>
+          <scalar-type>dateTime</scalar-type>
+          <namespace-uri/>
+          <localname>validEnd</localname>
+          <collation>http://marklogic.com/collation/codepoint</collation>
+          <range-value-positions>false</range-value-positions>
+        </range-element-index>
+        <range-element-index>
+          <scalar-type>dateTime</scalar-type>
+          <namespace-uri/>
+          <localname>systemStart</localname>
+          <collation>http://marklogic.com/collation/codepoint</collation>
+          <range-value-positions>false</range-value-positions>
+        </range-element-index>
+        <range-element-index>
+          <scalar-type>dateTime</scalar-type>
+          <namespace-uri/>
+          <localname>systemEnd</localname>
+          <collation>http://marklogic.com/collation/codepoint</collation>
+          <range-value-positions>false</range-value-positions>
+        </range-element-index>
 
         <!--
         Sample for:
@@ -304,7 +338,6 @@
           <range-value-positions>false</range-value-positions>
           <invalid-values>reject</invalid-values>
         </range-path-index>
-
 
 <!--
         <range-path-index>
