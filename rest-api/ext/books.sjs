@@ -1,4 +1,4 @@
-const bookCollectionPrefix = "/domain/position/book/";
+const bookCollectionPrefix = "/domain/position/";
 const bookCollectionMatch = bookCollectionPrefix + "*";
 
 
