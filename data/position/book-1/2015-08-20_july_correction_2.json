@@ -1,5 +1,6 @@
 {
  "id" : "book-1",
+ "name": "Book One",
  "positions": [{
    "date": "2015-01-01",
    "position": 10000,
