@@ -1,0 +1,16 @@
+{
+ "id" : "book-1",
+ "positions": [{
+   "date": "2015-01-01",
+   "position": 10000,
+   "projected": 10000
+ },
+ {
+   "date": "2015-12-01",
+   "projected": 100000
+ }],
+ "validStart": "2015-01-01T00:00:00Z",
+ "validEnd": "9999-12-31T11:59:59Z",
+ "systemStart": "2015-01-01T00:00:00Z",
+ "systemEnd": "9999-12-31T11:59:00Z"
+}
