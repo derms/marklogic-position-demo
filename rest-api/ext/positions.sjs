@@ -20,7 +20,7 @@ function get(context, params) {
   if (resultsArray.length>0) {
     //take first result
     var result = resultsArray[0];
-    output.name = result.root.name;    
+    output.name = result.root.name;
     output.positions = result.root.positions;
   }
 
@@ -75,5 +75,6 @@ function returnErrToClient(statusCode, statusMsg, body)
 /**
  * @param {string} book: The book to search for
  * @param {dateTime} validEnd: The valid end time
+ * @param {dateTime} systemEnd: The system end time
  */
 exports.GET = get;
