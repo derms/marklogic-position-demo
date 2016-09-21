@@ -14,7 +14,7 @@
     var _loginError;
     var _toStateName;
     var _toStateParams;
-    var _isAuthenticated = true;
+    var _isAuthenticated;
     var _userPrefix = '';
     var _protectedRoutes = [];
     var deregisterLoginSuccess;
@@ -135,7 +135,8 @@
     }
 
     function routeIsProtected(route) {
-      return _protectedRoutes.indexOf(route) > -1;
+      false;
+      //return _protectedRoutes.indexOf(route) > -1;
     }
 
     function blockRoute(event, next, nextParams) {
