@@ -2,9 +2,6 @@
   'use strict';
 
   angular.module('app')
-    .run(['loginService', function(loginService) {
-      loginService.protectedRoutes(['root.search', 'root.create', 'root.profile']);
-    }])
     .config(Config);
 
   Config.$inject = ['$stateProvider', '$urlMatcherFactoryProvider',
