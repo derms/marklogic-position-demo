@@ -14,7 +14,7 @@
     var _loginError;
     var _toStateName;
     var _toStateParams;
-    var _isAuthenticated;
+    var _isAuthenticated = true;
     var _userPrefix = '';
     var _protectedRoutes = [];
     var deregisterLoginSuccess;
