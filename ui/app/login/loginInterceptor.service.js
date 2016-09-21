@@ -2,10 +2,11 @@
   'use strict';
 
   angular.module('app.login')
-    .factory('authInterceptor', AuthInterceptor)
+    .factory('authInterceptor', AuthInterceptor);
+    /*
     .config(['$httpProvider', function($httpProvider) {
       $httpProvider.interceptors.push('authInterceptor');
-    }]);
+    }]);*/
 
   AuthInterceptor.$inject = ['$q', '$rootScope', '$injector'];
   function AuthInterceptor($q, $rootScope, $injector) {
