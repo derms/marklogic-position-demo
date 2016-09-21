@@ -19,7 +19,7 @@ module.exports = function(){
     mlHttpPort: process.env.ML_PORT || envJson['ml-http-port'] || config.marklogic.httpPort,
     defaultUser: process.env.ML_APP_USER || envJson['ml-app-user'] || config.marklogic.user,
     defaultPass: process.env.ML_APP_PASS || envJson['ml-app-pass'] || config.marklogic.password,
-    guestAccess: bool(process.env.GUEST_ACCESS || envJson['guest-access'] || config.marklogic.guestAccess || false),
+    guestAccess: true,
     disallowUpdates: bool(process.env.DISALLOW_UPDATES || envJson['disallow-updates'] || config.marklogic.disallowUpdates || false),
     appUsersOnly: bool(process.env.APP_USERS_ONLY || envJson['appusers-only'] || config.marklogic.appUsersOnly || false)
   };

@@ -135,8 +135,7 @@
     }
 
     function routeIsProtected(route) {
-      false;
-      //return _protectedRoutes.indexOf(route) > -1;
+      return _protectedRoutes.indexOf(route) > -1;
     }
 
     function blockRoute(event, next, nextParams) {
