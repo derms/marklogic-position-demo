@@ -35,10 +35,10 @@ Tested against Amazon Linux
 - git clone https://github.com/derms/marklogic-position-demo.git
 - cd marklogic-position-demo; npm install; bower install
 - sudo /etc/init.d/MarkLogic start
-- Navigate to http://<server>:8001/ to initialise the installation - using admin/admin as the password
+- Navigate to http://hostname:8001/ to initialise the installation - using admin/admin as the password
 - ./ml local bootstrap;
 - ./ml local deploy modules;
-- Go to http://<hostname>:8000 (admin/admin)
+- Go to http://hostname:8000 (admin/admin)
 - Import workspace from <git-clone-dir>/workspaces/position-setup.xml
 - Select database "position-content" and Execute "1.a bitemporal setup"
 - Select database "position-content" and Execute "1.b bitemporal setup"
@@ -48,7 +48,8 @@ Tested against Amazon Linux
 # Running the application
 - cd  <git-clone-dir> (e.g. ~/marklogic-position-demo)
 - gulp serve-local
+- Go to http://hostname:3000
 
 # Application Overview
 
-The application is a
+The application is a Traded "Position Overview" GUI that allows you do to "as at" and "as was at" type queries.
