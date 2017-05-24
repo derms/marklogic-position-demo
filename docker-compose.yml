@@ -1,0 +1,14 @@
+version: '2'
+services:
+  bt-node1:
+    image: "mlregistry.marklogic.com/marklogic/ml-8.0-6.3"
+    ports:
+      - "8000-8050:8000-8050"
+    hostname: "bt-node1.local"
+    container_name: "bt-node1.local"
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.30.0.0/16

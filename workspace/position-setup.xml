@@ -1,4 +1,4 @@
-<export><workspace name="position-setup"><query name="1.a bitemporal setup" focus="false" active="true" content-source="as:5497110870981293542:" mode="javascript">declareUpdate({explicitCommit: true});
+<export><workspace name="position-setup"><query name="1.a bitemporal setup" focus="false" active="true" content-source="as:3531747146879749136:" mode="javascript">declareUpdate({explicitCommit: true});
 var temporal = require("/MarkLogic/temporal.xqy");
 var validResult = temporal.axisCreate(
     "valid",
@@ -11,19 +11,21 @@ var systemResult = temporal.axisCreate(
 
 var collectionResult = temporal.collectionCreate(
 "position", "system", "valid");
-xdmp.commit();</query><query name="1.b bitemporal setup" focus="false" active="true" content-source="as:8835728600297522868:" mode="javascript">declareUpdate({explicitCommit: true});
+xdmp.commit();</query><query name="1.b bitemporal setup" focus="false" active="true" content-source="as:3531747146879749136:" mode="javascript">declareUpdate({explicitCommit: true});
 var temporal = require("/MarkLogic/temporal.xqy");
 temporal.setUseLsqt("position", true);
-xdmp.commit();</query><query name="2. load bitemporal documents" focus="true" active="true" content-source="as:2705163930569127974:" mode="javascript">declareUpdate();
+xdmp.commit();</query><query name="2. load bitemporal documents" focus="false" active="true" content-source="as:3531747146879749136:" mode="javascript">declareUpdate();
 
 //load the position temporal data in different transaction
-function insertPositionData(filename, node, systemStartTime) {
+function insertPositionData(filename, node, systemStartTime, collection) {
   xdmp.eval('declareUpdate();  \n\
+            temporal.statementSetSystemTime(xs.dateTime("' + systemStartTime +'")); \n\
             temporal.documentInsert("position", "/domain/position/' + filename +'",' + node +', null, ["/type/position"]) \n\
-            temporal.statementSetSystemTime(xs.dateTime("' + systemStartTime +'")); ',
+            ',
             null,
             {
-            "isolation" : "different-transaction"
+            "isolation" : "different-transaction",
+            "transactionMode" : "update-auto-commit"
             } );
 }
 
@@ -51,16 +53,69 @@ function loadDirectoryContents(path) {
           if (file.type="file") {
              node = xdmp.toJSON(xdmp.fromJsonString(xdmp.filesystemFile(file.pathname)));
              systemStartTime = node.root.systemStart;
-             insertPositionData(dir.filename, node, systemStartTime);
+             insertPositionData(dir.filename, node, systemStartTime, file.filename);
           }
 
         }
     }
   }
 }
-loadDirectoryContents('/home/ec2-user/marklogic-position-demo/data/position');</query><query name="3. delete bitemporal documents (useful)" focus="false" active="true" content-source="as:2705163930569127974:" mode="javascript">declareUpdate();
+ temporal.statementSetSystemTime(xs.dateTime("2015-01-01T00:00:00Z"));
+loadDirectoryContents('/tmp/position');</query><query name="3. delete bitemporal documents (useful)" focus="false" active="true" content-source="as:3531747146879749136:" mode="javascript">declareUpdate();
 var temporal = require("/MarkLogic/temporal.xqy");
 temporal.collectionSetOptions("position", ["updates-admin-override"]) ;
 xdmp.directoryDelete("/");
 
-</query></workspace></export>
+</query><query name="4a. Book-1 Position as-at March" focus="true" active="true" content-source="as:3531747146879749136:" mode="javascript">// position of book 1 for 2015-03-01 using latest data
+cts.doc("/domain/position/book-1").xpath('/positions[date="2015-03-01"]') </query><query name="4b. Book-1 Position as-was-at March" focus="false" active="true" content-source="as:3531747146879749136:" mode="javascript">// head returns first result
+fn.head(
+  cts.search(
+    cts.andQuery((
+      //search in /domain/position/book-1 
+      cts.collectionQuery("/domain/position/book-1"), 
+      //return results when system time ('as-was-at' time) is before the end of March  
+      cts.periodRangeQuery("system", "ISO_PRECEDES",
+        cts.period(
+                xs.dateTime("2015-03-31T23:59:59Z"),
+                xs.dateTime("9999-12-31T23:59:59Z")) )
+    ))
+  )
+).xpath('/positions[date="2015-03-01"]')           
+
+              </query><query name="Query 1" focus="false" active="false" content-source="as:3531747146879749136:" mode="javascript">declareUpdate({explicitCommit: true});
+
+
+//load the position temporal data in different transaction
+function insertPositionData(filename, node, systemStartTime) {
+  temporal.documentInsert("position", "/domain/position/" + filename, node, null, ["/type/position"])
+  temporal.statementSetSystemTime(xs.dateTime(systemStartTime));
+  xdmp.commit();
+}
+
+function sortByFilenames(a,b) {
+   var keyA = a.filename,
+       keyB = b.filename;
+  // Compare the 2 filenames
+  if(keyA &lt; keyB) return -1;
+  if(keyA &gt; keyB) return 1;
+  return 0;
+}
+
+function loadDirectoryContents(path) {
+  var directoryContents = xdmp.filesystemDirectory(path);
+  directoryContents = directoryContents.sort(sortByFilenames);
+  for(var i in directoryContents) {
+    var dir = directoryContents[i];
+    node = dir;
+    if (dir.type="dir") {
+        var dataFiles = xdmp.filesystemDirectory(dir.pathname);
+        dataFiles = dataFiles.sort(sortByFilenames);
+        for(var j in dataFiles) {
+            var file = dataFiles[j];
+          return dataFiles
+
+        }
+    }
+  }
+}
+loadDirectoryContents('/tmp/position');</query></workspace></export>

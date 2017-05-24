@@ -35,7 +35,7 @@
    "projected": 130000
  }],
  "validStart": "2015-07-01T00:00:00Z",
- "validEnd": "2015-07-31T00:00:00Z",
+ "validEnd": "2015-07-31T23:59:59Z",
  "systemStart": "2015-08-20T00:00:00Z",
  "systemEnd": "9999-12-31T11:59:00Z"
 }

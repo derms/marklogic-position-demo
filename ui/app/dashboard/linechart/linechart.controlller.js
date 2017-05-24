@@ -129,7 +129,8 @@
           minVerticalGap: 50,
           gridAlpha: 0,
           color: layoutColors.defaultText,
-          axisColor: layoutColors.defaultText
+          axisColor: layoutColors.defaultText,
+          maximum: 200000
         }
       ],
       graphs: [

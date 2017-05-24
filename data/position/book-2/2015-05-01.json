@@ -25,6 +25,10 @@
    "date": "2015-05-01",
    "position": 0,
    "projected": 0
+ },
+ {
+   "date": "2015-12-01",
+   "projected": 0
  }],
  "validStart": "2015-05-01T00:00:00Z",
  "validEnd": "9999-12-31T11:59:59Z",
